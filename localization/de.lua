@@ -9,6 +9,15 @@ return {
 					"{C:inactive}(Muss Platz haben)"
 				},
 			},
+			c_lib_temp = {
+				name = "://TEMP",
+				text = {
+					"Erstellt eine {C:attention}Verderbliche{}",
+					"Kopie eines {C:cry_code}gewählten{} Jokers",
+					"zu erstellen",
+					"{C:inactive}(Must have room)"
+				},
+			},
 		},
     },
 }

@@ -9,6 +9,14 @@ return {
 					"{C:inactive}(Must have room)"
 				},
 			},
+			c_lib_temp = {
+				name = "://TEMP",
+				text = {
+					"Creates a {C:attention}perishable{}",
+					"copy of a {C:cry_code}selected{} Joker",
+					"{C:inactive}(Must have room)"
+				},
+			},
 		},
     },
 }

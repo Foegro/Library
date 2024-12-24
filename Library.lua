@@ -64,10 +64,47 @@ SMODS.Consumable {
 		}
 	},
 }
+SMODS.Consumable {
+	set = "Code",
+	name = "lib-temp",
+	key = "temp",
+	pos = { x = 1, y = 0 },
+	config = { },
+	atlas = "code_atlas",
+	loc_vars = function(self, info_queue, card)
+		return { }
+	end,
+	can_use = function(self, card)
+		return G.jokers.config.card_limit - #G.jokers.cards >= 1 and #G.jokers.highlighted == 1
+	end,
+	use = function(self, card, area, copier)
+		G.E_MANAGER:add_event(Event({
+			func = function()
+				local card = copy_card(G.jokers.highlighted[1])
+				card:add_to_deck()
+				card:set_perishable(true)
+				G.jokers:emplace(card)
+				return true
+			end,
+		}))
+	end,
+	cry_credits = {
+		idea = {
+			"Foegro"
+		},
+		art = {
+			"Foegro"
+		},
+		code = {
+			"Foegro"
+		}
+	},
+}
 
 local aliases = {
 	library = "://LIBRARY",
 	lib = "://LIBRARY",
+	temp = "://TEMP"
 }
 
 for k, v in pairs(aliases) do
